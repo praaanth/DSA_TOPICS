@@ -1,0 +1,39 @@
+/*
+ given intervels return max profit we can get without overlapping 
+   these are also similar kanpsack kind of problems 
+   if not pick go to next index
+  if pick go to next intervel whose start time is greater than the end time 
+  the next intervel can be find using binary search 
+  leetcode 
+  2054->> two best non-overlapping intervels
+  646--> max length of pair chain
+  2008--> maximum earnings from taxi
+  1751--> maximum number of events that can attended 2
+
+  lintcode
+  300--> meetings rooms 4
+
+
+  max length of pair chains 
+
+  using dp we can easily do using binary search concept for finding the next index
+
+
+  using greedy with what time we need to sort 
+    if we sort based on the start time happens 
+    [[7,9],[4,5],[7,9],[-7,-1],[0,10],[3,10],[3,6],[2,3]]
+    sort the above example in start time
+    [-7,-1],[0,10],[2,3],[3,6],[3,10],[4,5],[7,9],[7,9]
+
+  we are storing the end time and length of non -overlapping intervals
+
+    pq--> [[-1,1]]
+    now [0,10]
+     pop -1
+    pq--> [10,2]
+    now to pop this 10 interval we need to have the interval x>10
+     if we ignore this interval 
+     [-7,-1] can be chained with [2,3] and so on this is  why this sorting on start time fails
+
+     ----------->
+     so we sort based on the end time to get the maximum number of intervals

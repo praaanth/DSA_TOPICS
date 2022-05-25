@@ -1,0 +1,16 @@
+/*
+Minimum cost for Tickets
+Intution is similar to coin change problem but here the sum is not constant
+we have 3 options we can choose min of these 3 is the answer
+if we pick day_1 
+   d_1=c[0]+f(ind+1,d,c);
+     //  pick the week ticket
+       int i=ind;
+        for(; i<n; i++) {
+             if(d[i]>=d[ind]+7) break; /// here wh it is equal condn because [1,7,8] we are at index 0 
+             // 1+7 ==8 from 8 onwards we need to calculate the answer
+        }
+       d_7= c[1]+f(i,d,c);
+  refer leetcode for code
+
+*/
